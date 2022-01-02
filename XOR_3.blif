@@ -1,0 +1,12 @@
+.model XOR_3
+
+.inputs A B C
+.outputs X
+
+.names A B C X
+010 1
+100 1
+001 1
+
+.end
+

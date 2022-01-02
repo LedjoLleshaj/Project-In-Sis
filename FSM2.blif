@@ -1,0 +1,131 @@
+.model FSM
+.inputs INOUT1 INOUT2 S_A S_B S_C PIENO_A PIENO_B PIENO_C VUOTO_A VUOTO_B \
+VUOTO_C
+.outputs SBIN SBOUT SECA SECB SECC SEC OFFX
+.latch    [45] LatchOut_v11   0
+.latch    [46] LatchOut_v12   1
+.latch    [47] LatchOut_v13   0
+.start_kiss
+.i 11
+.o 7
+.p 40
+.s 5
+.r S1
+00000------ S0 S1 0000001
+00001------ S0 S0 0000000
+00010------ S0 S0 0000000
+00011------ S0 S0 0000000
+00100------ S0 S0 0000000
+00101------ S0 S0 0000000
+00110------ S0 S0 0000000
+00111------ S0 S0 0000000
+01000------ S0 S0 0000000
+01001--0--- S0 S0 1000000
+01001--1--- S0 S0 0000000
+01010-0---- S0 S0 1000000
+01010-1---- S0 S0 0000000
+01011------ S0 S0 0000000
+011000----- S0 S0 1000000
+011001----- S0 S0 0000000
+01101------ S0 S0 0000000
+01110------ S0 S0 0000000
+01111------ S0 S0 0000000
+10000------ S0 S0 0000000
+10001-----0 S0 S0 0100000
+10001-----1 S0 S0 0000000
+10010----0- S0 S0 0100000
+10010----1- S0 S0 0000000
+10011------ S0 S0 0000000
+10100---0-- S0 S0 0100000
+10100---1-- S0 S0 0000000
+10101------ S0 S0 0000000
+10110------ S0 S0 0000000
+10111------ S0 S0 0000000
+11--------- S0 S0 0000000
+----0------ S1 S1 0000001
+---0------- S1 S1 0000001
+--0-------- S1 S1 0000001
+-0--------- S1 S1 0000001
+0---------- S1 S1 0000001
+11111------ S1 S2 0000000
+----------- S2 S3 0010010
+----------- S3 S4 0001010
+----------- S4 S0 0000110
+.end_kiss
+.latch_order LatchOut_v11 LatchOut_v12 LatchOut_v13
+.code S0 011
+.code S1 010
+.code S2 001
+.code S3 101
+.code S4 110
+.names SECC SEC [45]
+01 1
+.names LatchOut_v13 SECA SECC OFFX [46]
+--1- 1
+---1 1
+10-- 1
+.names SECB OFFX [47]
+00 1
+.names INOUT1 INOUT2 S_A S_B S_C PIENO_A PIENO_B PIENO_C [79] [85] SBIN
+01--1--011 1
+011000--1- 1
+01010-0-1- 1
+.names INOUT1 INOUT2 S_A S_B S_C VUOTO_A VUOTO_B VUOTO_C [79] [85] SBOUT
+10--1--011 1
+101000--1- 1
+10010-0-1- 1
+.names LatchOut_v11 LatchOut_v12 SECA
+00 1
+.names LatchOut_v11 LatchOut_v13 SECB
+11 1
+.names LatchOut_v11 LatchOut_v13 SECC
+10 1
+.names LatchOut_v11 LatchOut_v12 SEC
+1- 1
+-0 1
+.names INOUT1 INOUT2 S_A S_B S_C LatchOut_v11 LatchOut_v13 [79] [85] OFFX
+0----00-- 1
+-0---00-- 1
+--0--00-- 1
+---0-00-- 1
+----000-- 1
+00--0--11 1
+.names LatchOut_v12 LatchOut_v13 [79]
+11 1
+.names S_A S_B [85]
+00 1
+.exdc 
+.inputs INOUT1 INOUT2 S_A S_B S_C PIENO_A PIENO_B PIENO_C VUOTO_A VUOTO_B \
+VUOTO_C LatchOut_v11 LatchOut_v12 LatchOut_v13
+.outputs [45] [46] [47] SBIN SBOUT SECA SECB SECC SEC OFFX
+.names LatchOut_v11 LatchOut_v12 LatchOut_v13 [45]
+-00 1
+111 1
+.names LatchOut_v11 LatchOut_v12 LatchOut_v13 [46]
+-00 1
+111 1
+.names LatchOut_v11 LatchOut_v12 LatchOut_v13 [47]
+-00 1
+111 1
+.names LatchOut_v11 LatchOut_v12 LatchOut_v13 SBIN
+-00 1
+111 1
+.names LatchOut_v11 LatchOut_v12 LatchOut_v13 SBOUT
+-00 1
+111 1
+.names LatchOut_v11 LatchOut_v12 LatchOut_v13 SECA
+-00 1
+111 1
+.names LatchOut_v11 LatchOut_v12 LatchOut_v13 SECB
+-00 1
+111 1
+.names LatchOut_v11 LatchOut_v12 LatchOut_v13 SECC
+-00 1
+111 1
+.names LatchOut_v11 LatchOut_v12 LatchOut_v13 SEC
+-00 1
+111 1
+.names LatchOut_v11 LatchOut_v12 LatchOut_v13 OFFX
+-00 1
+111 1
+.end

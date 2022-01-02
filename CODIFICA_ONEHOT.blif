@@ -1,0 +1,12 @@
+.model CODIFICA_ONEHOT
+.inputs A4 A3 A2 A1 A0
+.outputs ERR
+
+#controllo se e fatto un inserimeneto giusto ERR=1 E SBAGLIATO
+.subckt XOR_2 A=A4 B=A3 X=ER1 
+.subckt XOR_3 A=A2 B=A1 C=A0 X=ER2
+.subckt AND_2 A=ER1 B=ER2 C=ERR
+.end
+.search XOR_2.blif
+.search XOR_3.blif
+.search AND_2.blif

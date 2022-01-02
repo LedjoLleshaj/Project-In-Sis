@@ -1,0 +1,9 @@
+.model MINORE_24
+.inputs A4 A3 A2 A1 A0
+.outputs U
+.names A4 A3 A2 A1 A0 U
+111-- 1
+11-1- 1
+11--1 1
+.end
+

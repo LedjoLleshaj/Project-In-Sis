@@ -1,0 +1,17 @@
+read_blif FSMD_ORIGINAL.blif
+read_library synch.genlib
+map -m 0
+reduce_depth
+ps
+source script.rugged
+print_stats
+source script.rugged
+print_stats
+source script.rugged
+print_stats
+source script.rugged
+source script.rugged
+source script.rugged
+write_blif FSMD.blif
+ps
+map -s

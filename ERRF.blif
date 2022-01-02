@@ -1,0 +1,15 @@
+.model ERRF
+.inputs A4 A3 A2 A1 A0 OFF
+.outputs  err0x
+
+.names A4 A3 A2 A1 A0 OFF err0x
+101000 0
+100100 0
+100010 0
+011000 0
+010100 0
+010010 0
+
+
+.end
+
